@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\RoomType;
 use App\Models\Hotel;
+use App\Models\Reservation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,5 +20,10 @@ class Room extends Model
     public function type()
     {
         return $this->belongsTo(RoomType::class);
+    }
+
+    public function reservations()
+    {
+        return $this->belongsToMany(Reservation::class);
     }
 }
