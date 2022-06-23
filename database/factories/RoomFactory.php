@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\RoomType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,8 @@ class RoomFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'description' => $this->faker->paragraph()
+            'description' => $this->faker->paragraph(),
+            'type_id' => RoomType::factory()->create()
         ];
     }
 }

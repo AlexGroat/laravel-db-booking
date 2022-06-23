@@ -18,9 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->unsignedBigInteger('hotel_id');
+            $table->unsignedBigInteger('type_id');
             $table->timestamps();
 
             $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade');
+            $table->foreign('type_id')->references('id')->on('room_types')->onDelete('cascade');
         });
     }
 
