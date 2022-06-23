@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Models\Room;
+use App\Models\Hotel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hotel extends Model
+class Room extends Model
 {
     use HasFactory;
 
-    public function rooms()
+    public function hotel()
     {
-        return $this->hasMany(Room::class);
+        return $this->belongsTo(Hotel::class);
     }
 }
